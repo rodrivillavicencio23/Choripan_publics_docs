@@ -1,0 +1,51 @@
+🧭 Paso 1: Generar el tablero
+Supón que recibes una variable tablero_str como esta:
+
+python
+Copiar
+Editar
+"P,-,#,-,#,#,#,#;#,-,-,#,#,#,#,A;#,#,-,#,#,#,-,T;-,#,-,-,T,P,O,#;P,-,P,-,P,-,-,-;-,-,-,-,-,#,#,-;-,-,-,-,#,T,-,#;#,-,-,P,-,#,#,#"
+➡️ Convierte el string a tablero:
+
+python
+Copiar
+Editar
+tablero = generar_tablero(tablero_str)
+🎯 Paso 2: Buscar la posición del objetivo 'O'
+Haz un recorrido del tablero (doble for) y guarda la posición:
+
+python
+Copiar
+Editar
+objetivo = None
+for i in range(8):
+    for j in range(8):
+        if tablero[i][j] == 'O':
+            objetivo = [i, j]
+            break
+🧱 Paso 3: Recorrer el tablero para encontrar piezas atacantes
+Haz un recorrido similar, pero ahora buscando 'A', 'T', 'P':
+
+python
+Copiar
+Editar
+for i in range(8):
+    for j in range(8):
+        pieza = tablero[i][j]
+        if pieza in ('A', 'T', 'P'):
+            movimientos = movimiento_pieza(pieza, [i, j], tablero)
+            if objetivo in movimientos:
+                # mover la pieza
+🔄 Paso 4: Mover la pieza
+Si encontraste una pieza que puede amenazar al objetivo:
+
+python
+Copiar
+Editar
+tablero[objetivo[0]][objetivo[1]] = pieza  # moverla
+tablero[i][j] = '-'  # dejar la casilla vacía
+🖨️ Paso 5: Imprimir el resultado
+python
+Copiar
+Editar
+imprimir_tablero(tablero)

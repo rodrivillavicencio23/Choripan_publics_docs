@@ -1,0 +1,19 @@
+{
+    "usuarios": [
+        {
+            "username": "Crackyudante",
+            "saldo": 10000,
+            "fecha_creacion": "2025-11-25T10:46:53.486078"
+        },
+        {
+            "username": "Ferxoo151",
+            "saldo": 100000,
+            "fecha_creacion": "2025-11-25T10:47:34.385597"
+        },
+        {
+            "username": "Pepa",
+            "saldo": 10000,
+            "fecha_creacion": "2025-11-25T14:29:40.070735"
+        }
+    ]
+}

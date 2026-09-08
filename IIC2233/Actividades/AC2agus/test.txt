@@ -1,0 +1,13 @@
+OK
+python3 -m unittest -v -b tests_publicos.test_cargar_animes
+
+OK
+python3 -m unittest -v -b tests_publicos.test_consultas_animes_por_estreno
+
+OK
+python3 -m unittest -v -b tests_publicos.test_consultas_descartar_animes
+
+python3 -m unittest -v -b tests_publicos.test_consultas_estudios_genero
+
+OK
+python3 -m unittest -v -b tests_publicos.tests_consultas_resumen_anime

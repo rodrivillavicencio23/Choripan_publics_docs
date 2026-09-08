@@ -1,0 +1,35 @@
+ready
+python3 -m unittest tests_publicos.test_00_iniciar_tablero -b 
+
+ready
+python3 -m unittest tests_publicos.test_01_cambiar_color_tablero -b
+
+ready
+python3 -m unittest tests_publicos.test_02_aplicar_cambios_tablero -b
+
+ready
+python3 -m unittest tests_publicos.test_03_validar_solucion -b
+
+ready
+python3 -m unittest tests_publicos.test_03_validar_solucion -b
+
+ready
+python3 -m unittest tests_publicos.test_04_encontrar_solucion -b
+
+
+python3 -m unittest tests_publicos.test_05_optimizar_solucion -b
+
+
+python3 -m unittest tests_publicos.test_06_iniciar_dccolores -b
+
+ready
+python3 -m unittest tests_publicos.test_07_cargar_tablero -b
+
+ready
+python3 -m unittest tests_publicos.test_08_guardar_cambios -b
+
+ready 
+python3 -m unittest tests_publicos.test_09_integracion -b
+
+ready
+python3 -m unittest tests_publicos.timeout_function -b

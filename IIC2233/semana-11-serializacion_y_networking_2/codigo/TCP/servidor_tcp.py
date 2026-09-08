@@ -18,7 +18,7 @@ while counter < 5:
 
         ## Este servidor no lee lo que envía el cliente, sino que responde
         ## lo mismo por cada conexión.
-        socket_cliente.sendall("Gracias por conectarte\n".encode("utf-8"))
+        socket_cliente.sendall("Gracias por conectarte che\n".encode("utf-8"))
         socket_cliente.close()
         counter += 1
     except ConnectionError:

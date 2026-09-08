@@ -1,0 +1,30 @@
+cd Desktop\repopersonal\debitirarmasfotos\T4
+
+cd onedrive\desktop\new_repo\debitirarmasfotos\T4
+comentarios más cortos, sin enumeraciones y en este formato: # ---- "COMMENT"   ----
+Eliminar los try asumiendo que sí se va a cumplir y no ocurrirá algún fallo
+
+T4
+|-/client
+|---/Assets
+|---|---/(carpetas de imagenes de cada juego)
+|---/backend
+|---|---connection_handler.py
+|---/frontend
+|---|---/sprites
+|---|---client.py
+|---|---ventana_aviator.py
+|---|---ventana_blackjack.py
+|---|---ventana_inicial.py
+|---|---ventana_principal.py
+|---|---main.py 
+|---main.py
+|-/server
+|---/data
+|---|---(archivos csv)
+|---conexion.json
+|---main.py
+|---parametros.py
+|-.gitignore
+|-enunciado
+|-README.md
