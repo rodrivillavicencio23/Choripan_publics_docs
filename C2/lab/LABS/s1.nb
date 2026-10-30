@@ -1,0 +1,419 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     19718,        409]
+NotebookOptionsPosition[     13858,        319]
+NotebookOutlinePosition[     14323,        336]
+CellTagsIndexPosition[     14280,        333]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Laboratorio 1, Mat1620L", "Title",ExpressionUUID->"191889da-c9ed-405f-9ec5-63fe4eec8b1f"],
+
+Cell[CellGroupData[{
+
+Cell["Preguntas", "Section",ExpressionUUID->"35a43aa5-e7fd-4134-bc22-5f8d52733f04"],
+
+Cell[CellGroupData[{
+
+Cell["1)", "Subsection",ExpressionUUID->"d0ff1730-d0dd-4df3-b9c6-b3bda24494e5"],
+
+Cell[CellGroupData[{
+
+Cell["Soluci\[OAcute]n", "Subsubsection",ExpressionUUID->"6bd0fd5c-aec3-4c6c-a162-5d8f5f8320a3"],
+
+Cell["a)", "Text",ExpressionUUID->"996b21f7-05f7-4d08-be27-ac35e1ed3ff1"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"g", "[", "x", "_", "]", ":=", "Sin", "[", "x", "]", "^", "2", "/", 
+  "x", "^", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"valores", "=", "{", "2", ",", "5", ",", "10", ",", "100", ",", 
+  "1000", ",", "10000", "}"}], "\[IndentingNewLine]", 
+ RowBox[{"tabla", "=", "Table", "[", "{", "t", ",", "NIntegrate", "[", "g", "[",
+   "x", "]", ",", "{", "x", ",", "2", ",", "t", "}", "]", "}", ",", "{", "t", 
+  ",", "valores", "}", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", "tabla", "]"}]}], "Input",ExpressionUUID->\
+"88643f96-135c-4861-8918-e369f3bab0b2"],
+
+Cell["\<\
+Los valores se estabilizan al aumentar t, por lo que se conjetura que la \
+integral impropia converge.\
+\>", "Text",ExpressionUUID->"61ce137b-c2ad-4cec-b413-d4c0e5feabaa"],
+
+Cell["b)", "Text",ExpressionUUID->"3fc69dd6-04fd-463c-a5db-4e87f0a13f74"],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "Plot", "[", "{", "g", "[", "x", "]", ",", "1", "/",
+   "x", "^", "n", "}", ",", "{", "x", ",", "2", ",", "20", "}", ",", 
+  "PlotRange", "->", "All", "]", ",", "{", "n", ",", "1", ",", "3", ",", 
+  "0.05", "}", "]"}]], "Input",ExpressionUUID->"440cd26a-aeec-4d6a-9871-\
+69e285ab337f"],
+
+Cell["\<\
+En particular, para n=2 se observa que g(x) queda bajo 1/x^2.\
+\>", "Text",ExpressionUUID->"85ecb2dd-2bf1-4bfa-a0f1-68ef19a0bf8d"],
+
+Cell["c)", "Text",ExpressionUUID->"0e2c164f-77e0-452b-8a45-bf075ef81666"],
+
+Cell[BoxData[{
+ RowBox[{"FullSimplify", "[", "0", "<=", "g", "[", "x", "]", "<=", "1", "/", 
+  "x", "^", "2", ",", "x", ">=", "2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", "1", "/", "x", "^", "2", ",", "{", "x", ",", "2", ",",
+   "Infinity", "}", "]"}]}], "Input",ExpressionUUID->"767e66c1-ed4f-43b1-a7d9-\
+efe5ef109966"],
+
+Cell["\<\
+Como 0 <= sen^2(x)/x^2 <= 1/x^2 para x >= 2 y la integral de 1/x^2 converge, \
+por comparaci\[OAcute]n la integral impropia de g tambi\[EAcute]n converge.\
+\>", "Text",ExpressionUUID->"eb38250a-f714-483f-9a95-3884e1d42abf"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["2)", "Subsection",ExpressionUUID->"9da80b0c-45ac-4225-b7fc-2ab20b32ed76"],
+
+Cell[CellGroupData[{
+
+Cell["Soluci\[OAcute]n", "Subsubsection",ExpressionUUID->"5c782983-6b08-410c-85f4-d62483c25464"],
+
+Cell["a)", "Text",ExpressionUUID->"28ebb48f-caa4-4192-94de-f22ea427a70c"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "[", "n", "_", "]", ":=", "Sum", "[", "1", "/", "k", ",", "{", 
+  "k", ",", "n", ",", "2", "*", "n", "}", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"term", "=", "N", "[", "Table", "[", "a", "[", "n", "]", ",", "{", 
+  "n", ",", "1", ",", "30", "}", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "term", ",", "PlotStyle", "->", "PointSize", "[", 
+  "0.02", "]", "]"}]}], "Input",ExpressionUUID->"2be97913-8c5d-4a3e-953c-\
+0fcc49afa1ed"],
+
+Cell["\<\
+La gr\[AAcute]fica sugiere que la sucesi\[OAcute]n es decreciente y que se \
+aproxima a un valor cercano a 0.69.\
+\>", "Text",ExpressionUUID->"5692662e-98ff-4393-8a0c-55f5be9af7be"],
+
+Cell["b)", "Text",ExpressionUUID->"96576d3c-50e4-4263-82d9-666dc45c14f0"],
+
+Cell[BoxData[{
+ RowBox[{"dif", "=", "FullSimplify", "[", "a", "[", "n", "]", "-", "a", "[", 
+  "n", "+", "1", "]", ",", "Element", "[", "n", ",", "Integers", "]", "&&", 
+  "n", ">=", "1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", "dif", ">", "0", ",", "Element", "[", "n", ",", 
+  "Integers", "]", "&&", "n", ">=", "1", "]"}]}], "Input",ExpressionUUID->\
+"99f8b6dc-200b-4dd7-b223-5bbdfbbc75bc"],
+
+Cell["Como a_n-a_(n+1)>0 para n>=1, la sucesi\[OAcute]n es decreciente.", \
+"Text",ExpressionUUID->"252790c0-fe47-4ca8-b301-3718b5df51ae"],
+
+Cell["c)", "Text",ExpressionUUID->"1d146f95-fd43-4803-969c-f98b1b3851ac"],
+
+Cell[BoxData[{
+ RowBox[{"FullSimplify", "[", "a", "[", "n", "]", ">", "0", ",", "Element", "[",
+   "n", ",", "Integers", "]", "&&", "n", ">=", "1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "[", "1", "]"}]}], "Input",ExpressionUUID->"1fd79f37-f04c-49be-\
+ac46-c19d1220d56a"],
+
+Cell["\<\
+Todos los t\[EAcute]rminos son positivos y, como la sucesi\[OAcute]n es \
+decreciente, 0<a_n<=a_1=3/2. Por lo tanto, est\[AAcute] acotada.\
+\>", "Text",ExpressionUUID->"f640f05d-0053-4215-9d89-e8e710bfa703"],
+
+Cell["d)", "Text",ExpressionUUID->"ed60b3d3-934f-4216-810e-23f1079f671f"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", "a", "[", "n", "]", ",", "n", "->", "Infinity", 
+  "]"}]], "Input",ExpressionUUID->"8ca214e6-451d-40af-aa85-189da02db1ff"],
+
+Cell["El l\[IAcute]mite es Log[2].", "Text",ExpressionUUID->"141ed540-bfd4-425e-aa0b-798ea8eb839e"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["3)", "Subsection",ExpressionUUID->"89caf313-098f-403a-9fde-b41ea1fadff7"],
+
+Cell[CellGroupData[{
+
+Cell["Soluci\[OAcute]n", "Subsubsection",ExpressionUUID->"5f8895f2-c882-4e51-a9cd-74206640bbaf"],
+
+Cell["Definimos una rutina que genera los primeros 30 t\[EAcute]rminos.", \
+"Text",ExpressionUUID->"b5402081-fe1c-4297-b28f-c8fd3aa4d28f"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sucesion", "[", "a", "_", "]", ":=", "NestList", "[", "1", "/", "4",
+   "+", "#", "^", "2", "&", ",", "a", ",", "29", "]"}]}], "Input",ExpressionUU\
+ID->"4f54aea5-ba10-484a-9cf9-9193bb92e4b3"],
+
+Cell["a = 1", "Text",ExpressionUUID->"4ab12868-6d3b-4fc2-a75b-f6e52ef63ffa"],
+
+Cell[BoxData[{
+ RowBox[{"term1", "=", "N", "[", "sucesion", "[", "1", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "term1", ",", "PlotStyle", "->", "PointSize", "[", 
+  "0.02", "]", ",", "PlotRange", "->", "All", "]"}]}], "Input",ExpressionUUID->\
+"d75b5a35-51ff-481e-901d-994dc95f9603"],
+
+Cell["\<\
+Los t\[EAcute]rminos crecen r\[AAcute]pidamente, por lo que la \
+sucesi\[OAcute]n no converge.\
+\>", "Text",ExpressionUUID->"24792a7b-889f-4ff6-8929-812f3b9ba7d5"],
+
+Cell["a = 1/2", "Text",ExpressionUUID->"a5793a7b-97f2-4a22-bee3-7908eb2f7b88"],
+
+Cell[BoxData[{
+ RowBox[{"term2", "=", "N", "[", "sucesion", "[", "1", "/", "2", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "term2", ",", "PlotStyle", "->", "PointSize", "[", 
+  "0.02", "]", ",", "PlotRange", "->", "All", "]"}]}], "Input",ExpressionUUID->\
+"375bca55-f140-4346-955b-33260e56b3a2"],
+
+Cell["La sucesi\[OAcute]n es constante: x_n=1/2 para todo n.", "Text",ExpressionUUID->"718c7bc1-3d82-4aad-97d5-3d6073a38fba"],
+
+Cell["a = 1/4", "Text",ExpressionUUID->"c61ab4a5-1dfe-429f-8572-2a30b7ff806e"],
+
+Cell[BoxData[{
+ RowBox[{"term3", "=", "N", "[", "sucesion", "[", "1", "/", "4", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "term3", ",", "PlotStyle", "->", "PointSize", "[", 
+  "0.02", "]", ",", "PlotRange", "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", "L", "==", "1", "/", "4", "+", "L", "^", "2", ",", "L",
+   ",", "Reals", "]"}]}], "Input",ExpressionUUID->"6784df79-a0ed-4e0f-bf59-\
+7e6345dcd275"],
+
+Cell["\<\
+La sucesi\[OAcute]n parece creciente y converge a 1/2. Si existe un \
+l\[IAcute]mite L, debe satisfacer L=1/4+L^2.\
+\>", "Text",ExpressionUUID->"839cba25-1cb7-4517-a010-f2caa35c259b"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["4)", "Subsection",ExpressionUUID->"edebf74f-e640-4b91-82f9-25493585311b"],
+
+Cell[CellGroupData[{
+
+Cell["Soluci\[OAcute]n", "Subsubsection",ExpressionUUID->"951580d6-b518-4028-9f52-5bcd222d92c6"],
+
+Cell["\<\
+Construimos una rutina para generar los t\[EAcute]rminos de la \
+ecuaci\[OAcute]n log\[IAcute]stica.\
+\>", "Text",ExpressionUUID->"744832ce-2ff4-4db2-b882-448867cee413"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"logistica", "[", "p0", "_", ",", "k", "_", ",", "n", "_", "]", ":=",
+   "NestList", "[", "k", "*", "#", "*", "(", "1", "-", "#", ")", "&", ",", 
+  "p0", ",", "n", "-", "1", "]"}]}], "Input",ExpressionUUID->"3df92344-6af9-\
+4125-8e0c-759b6a87388e"],
+
+Cell["a)", "Text",ExpressionUUID->"404f4d41-878f-4135-8fdf-3cc4b5f7ed54"],
+
+Cell[BoxData[{
+ RowBox[{"p01", "=", "1", "/", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"p02", "=", "1", "/", "5"}], "\[IndentingNewLine]", 
+ RowBox[{"k1", "=", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"k2", "=", "5", "/", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"s11", "=", "N", "[", "logistica", "[", "p01", ",", "k1", ",", "30", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"s12", "=", "N", "[", "logistica", "[", "p01", ",", "k2", ",", "30", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "{", "s11", ",", "s12", "}", ",", "Joined", "->", 
+  "True", ",", "PlotRange", "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"s21", "=", "N", "[", "logistica", "[", "p02", ",", "k1", ",", "30", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"s22", "=", "N", "[", "logistica", "[", "p02", ",", "k2", ",", "30", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "{", "s21", ",", "s22", "}", ",", "Joined", "->", 
+  "True", ",", "PlotRange", "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", "{", "Last", "[", "s11", "]", ",", "Last", "[", "s12", "]",
+   ",", "Last", "[", "s21", "]", ",", "Last", "[", "s22", "]", "}", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", "p", "==", "k", "*", "p", "*", "(", "1", "-", "p", ")",
+   ",", "p", "]"}]}], "Input",ExpressionUUID->"657da52e-de6e-4b8d-a0ae-\
+e0e1dd9a647c"],
+
+Cell["\<\
+Para los valores ensayados con 1<k<3 se observa convergencia. El \
+l\[IAcute]mite no depende de p0, pero s\[IAcute] de k; el punto fijo no nulo \
+es (k-1)/k.\
+\>", "Text",ExpressionUUID->"ee95c381-0942-4d2b-9d44-b17919298f01"],
+
+Cell["b)", "Text",ExpressionUUID->"b744b172-a594-4fb0-bdaa-a766fbece702"],
+
+Cell[BoxData[{
+ RowBox[{"k", "=", "3.2"}], "\[IndentingNewLine]", 
+ RowBox[{"sb", "=", "N", "[", "logistica", "[", "1", "/", "2", ",", "k", ",", 
+  "100", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "sb", ",", "Joined", "->", "True", ",", "PlotRange",
+   "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Take", "[", "sb", ",", "-", "20", "]"}]}], "Input",ExpressionUUID->\
+"a6cfa277-bc22-4203-82a0-0822b6365639"],
+
+Cell["\<\
+Despu\[EAcute]s de un comportamiento transitorio, los t\[EAcute]rminos \
+alternan aproximadamente entre dos valores: aparece un ciclo de \
+per\[IAcute]odo 2.\
+\>", "Text",ExpressionUUID->"f0d46c4f-9d10-4603-beca-b8295b32bd56"],
+
+Cell["c)", "Text",ExpressionUUID->"c325de13-a5ab-434d-8903-972e297b8c72"],
+
+Cell[BoxData[{
+ RowBox[{"ks", "=", "{", "3.42", ",", "3.46", ",", "3.49", "}"}], "\[IndentingNewLine]", 
+ RowBox[{"sc", "=", "Table", "[", "N", "[", "logistica", "[", "1", "/", "2", ",",
+   "kk", ",", "120", "]", "]", ",", "{", "kk", ",", "ks", "}", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "sc", ",", "Joined", "->", "True", ",", "PlotRange",
+   "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", "{", "ks", "[", "[", "j", "]", "]", ",", "Take", "[", 
+  "sc", "[", "[", "j", "]", "]", ",", "-", "16", "]", "}", ",", "{", "j", ",",
+   "Length", "[", "ks", "]", "}", "]"}]}], "Input",ExpressionUUID->"19f31dea-\
+0f00-4053-a788-1a7fedde3363"],
+
+Cell["\<\
+Al aumentar k dentro de este intervalo aparecen cambios cualitativos y \
+duplicaciones de per\[IAcute]odo.\
+\>", "Text",ExpressionUUID->"fc4708a5-ccdd-4b3d-abb7-a736bc76493f"],
+
+Cell["d)", "Text",ExpressionUUID->"9079705e-60e9-405a-8c57-3cc091bcee72"],
+
+Cell[BoxData[{
+ RowBox[{"k", "=", "3.9"}], "\[IndentingNewLine]", 
+ RowBox[{"sd", "=", "N", "[", "logistica", "[", "1", "/", "2", ",", "k", ",", 
+  "150", "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "sd", ",", "Joined", "->", "True", ",", "PlotRange",
+   "->", "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"p0a", "=", "0.001"}], "\[IndentingNewLine]", 
+ RowBox[{"p0b", "=", "0.001001"}], "\[IndentingNewLine]", 
+ RowBox[{"sda", "=", "N", "[", "logistica", "[", "p0a", ",", "k", ",", "100", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sdb", "=", "N", "[", "logistica", "[", "p0b", ",", "k", ",", "100", 
+  "]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListLinePlot", "[", "{", "sda", ",", "sdb", "}", ",", "PlotRange", "->",
+   "All", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"diferencias", "=", "Abs", "[", "sda", "-", "sdb", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "diferencias", ",", "Joined", "->", "True", ",", 
+  "PlotRange", "->", "All", "]"}]}], "Input",ExpressionUUID->"5f87c822-24f8-\
+41e4-8d54-27ccab29faa7"],
+
+Cell["\<\
+Aunque las condiciones iniciales difieren muy poco, despu\[EAcute]s de varias \
+iteraciones las sucesiones se separan. Esto muestra sensibilidad a las \
+condiciones iniciales.\
+\>", "Text",ExpressionUUID->"8e76be49-6e95-421a-9690-43ed26e1e335"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1512, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 para Mac OS X ARM (64-bit) (March 16, 2025)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"94c417e2-dd1e-4585-b828-adffcec024de"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 95, 0, 95, "Title",ExpressionUUID->"191889da-c9ed-405f-9ec5-63fe4eec8b1f"],
+Cell[CellGroupData[{
+Cell[696, 26, 83, 0, 68, "Section",ExpressionUUID->"35a43aa5-e7fd-4134-bc22-5f8d52733f04"],
+Cell[CellGroupData[{
+Cell[804, 30, 79, 0, 53, "Subsection",ExpressionUUID->"d0ff1730-d0dd-4df3-b9c6-b3bda24494e5"],
+Cell[CellGroupData[{
+Cell[908, 34, 96, 0, 43, "Subsubsection",ExpressionUUID->"6bd0fd5c-aec3-4c6c-a162-5d8f5f8320a3"],
+Cell[1007, 36, 73, 0, 32, "Text",ExpressionUUID->"996b21f7-05f7-4d08-be27-ac35e1ed3ff1"],
+Cell[1083, 38, 666, 10, 180, "Input",ExpressionUUID->"88643f96-135c-4861-8918-e369f3bab0b2"],
+Cell[1752, 50, 181, 3, 32, "Text",ExpressionUUID->"61ce137b-c2ad-4cec-b413-d4c0e5feabaa"],
+Cell[1936, 55, 73, 0, 32, "Text",ExpressionUUID->"3fc69dd6-04fd-463c-a5db-4e87f0a13f74"],
+Cell[2012, 57, 327, 5, 53, "Input",ExpressionUUID->"440cd26a-aeec-4d6a-9871-69e285ab337f"],
+Cell[2342, 64, 140, 2, 32, "Text",ExpressionUUID->"85ecb2dd-2bf1-4bfa-a0f1-68ef19a0bf8d"],
+Cell[2485, 68, 73, 0, 32, "Text",ExpressionUUID->"0e2c164f-77e0-452b-8a45-bf075ef81666"],
+Cell[2561, 70, 338, 5, 88, "Input",ExpressionUUID->"767e66c1-ed4f-43b1-a7d9-efe5ef109966"],
+Cell[2902, 77, 233, 3, 32, "Text",ExpressionUUID->"eb38250a-f714-483f-9a95-3884e1d42abf"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3184, 86, 79, 0, 37, "Subsection",ExpressionUUID->"9da80b0c-45ac-4225-b7fc-2ab20b32ed76"],
+Cell[CellGroupData[{
+Cell[3288, 90, 96, 0, 70, "Subsubsection",ExpressionUUID->"5c782983-6b08-410c-85f4-d62483c25464"],
+Cell[3387, 92, 73, 0, 70, "Text",ExpressionUUID->"28ebb48f-caa4-4192-94de-f22ea427a70c"],
+Cell[3463, 94, 555, 8, 70, "Input",ExpressionUUID->"2be97913-8c5d-4a3e-953c-0fcc49afa1ed"],
+Cell[4021, 104, 191, 3, 70, "Text",ExpressionUUID->"5692662e-98ff-4393-8a0c-55f5be9af7be"],
+Cell[4215, 109, 73, 0, 70, "Text",ExpressionUUID->"96576d3c-50e4-4263-82d9-666dc45c14f0"],
+Cell[4291, 111, 413, 6, 70, "Input",ExpressionUUID->"99f8b6dc-200b-4dd7-b223-5bbdfbbc75bc"],
+Cell[4707, 119, 138, 1, 70, "Text",ExpressionUUID->"252790c0-fe47-4ca8-b301-3718b5df51ae"],
+Cell[4848, 122, 73, 0, 70, "Text",ExpressionUUID->"1d146f95-fd43-4803-969c-f98b1b3851ac"],
+Cell[4924, 124, 277, 4, 70, "Input",ExpressionUUID->"1fd79f37-f04c-49be-ac46-c19d1220d56a"],
+Cell[5204, 130, 217, 3, 70, "Text",ExpressionUUID->"f640f05d-0053-4215-9d89-e8e710bfa703"],
+Cell[5424, 135, 73, 0, 70, "Text",ExpressionUUID->"ed60b3d3-934f-4216-810e-23f1079f671f"],
+Cell[5500, 137, 159, 2, 70, "Input",ExpressionUUID->"8ca214e6-451d-40af-aa85-189da02db1ff"],
+Cell[5662, 141, 99, 0, 70, "Text",ExpressionUUID->"141ed540-bfd4-425e-aa0b-798ea8eb839e"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5810, 147, 79, 0, 37, "Subsection",ExpressionUUID->"89caf313-098f-403a-9fde-b41ea1fadff7"],
+Cell[CellGroupData[{
+Cell[5914, 151, 96, 0, 70, "Subsubsection",ExpressionUUID->"5f8895f2-c882-4e51-a9cd-74206640bbaf"],
+Cell[6013, 153, 138, 1, 70, "Text",ExpressionUUID->"b5402081-fe1c-4297-b28f-c8fd3aa4d28f"],
+Cell[6154, 156, 294, 4, 70, "Input",ExpressionUUID->"4f54aea5-ba10-484a-9cf9-9193bb92e4b3"],
+Cell[6451, 162, 76, 0, 70, "Text",ExpressionUUID->"4ab12868-6d3b-4fc2-a75b-f6e52ef63ffa"],
+Cell[6530, 164, 304, 4, 70, "Input",ExpressionUUID->"d75b5a35-51ff-481e-901d-994dc95f9603"],
+Cell[6837, 170, 173, 3, 70, "Text",ExpressionUUID->"24792a7b-889f-4ff6-8929-812f3b9ba7d5"],
+Cell[7013, 175, 78, 0, 70, "Text",ExpressionUUID->"a5793a7b-97f2-4a22-bee3-7908eb2f7b88"],
+Cell[7094, 177, 314, 4, 70, "Input",ExpressionUUID->"375bca55-f140-4346-955b-33260e56b3a2"],
+Cell[7411, 183, 125, 0, 70, "Text",ExpressionUUID->"718c7bc1-3d82-4aad-97d5-3d6073a38fba"],
+Cell[7539, 185, 78, 0, 70, "Text",ExpressionUUID->"c61ab4a5-1dfe-429f-8572-2a30b7ff806e"],
+Cell[7620, 187, 441, 6, 70, "Input",ExpressionUUID->"6784df79-a0ed-4e0f-bf59-7e6345dcd275"],
+Cell[8064, 195, 193, 3, 70, "Text",ExpressionUUID->"839cba25-1cb7-4517-a010-f2caa35c259b"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8306, 204, 79, 0, 37, "Subsection",ExpressionUUID->"edebf74f-e640-4b91-82f9-25493585311b"],
+Cell[CellGroupData[{
+Cell[8410, 208, 96, 0, 70, "Subsubsection",ExpressionUUID->"951580d6-b518-4028-9f52-5bcd222d92c6"],
+Cell[8509, 210, 179, 3, 70, "Text",ExpressionUUID->"744832ce-2ff4-4db2-b882-448867cee413"],
+Cell[8691, 215, 349, 5, 70, "Input",ExpressionUUID->"3df92344-6af9-4125-8e0c-759b6a87388e"],
+Cell[9043, 222, 73, 0, 70, "Text",ExpressionUUID->"404f4d41-878f-4135-8fdf-3cc4b5f7ed54"],
+Cell[9119, 224, 1361, 21, 70, "Input",ExpressionUUID->"657da52e-de6e-4b8d-a0ae-e0e1dd9a647c"],
+Cell[10483, 247, 236, 4, 70, "Text",ExpressionUUID->"ee95c381-0942-4d2b-9d44-b17919298f01"],
+Cell[10722, 253, 73, 0, 70, "Text",ExpressionUUID->"b744b172-a594-4fb0-bdaa-a766fbece702"],
+Cell[10798, 255, 435, 7, 70, "Input",ExpressionUUID->"a6cfa277-bc22-4203-82a0-0822b6365639"],
+Cell[11236, 264, 236, 4, 70, "Text",ExpressionUUID->"f0d46c4f-9d10-4603-beca-b8295b32bd56"],
+Cell[11475, 270, 73, 0, 70, "Text",ExpressionUUID->"c325de13-a5ab-434d-8903-972e297b8c72"],
+Cell[11551, 272, 672, 9, 70, "Input",ExpressionUUID->"19f31dea-0f00-4053-a788-1a7fedde3363"],
+Cell[12226, 283, 185, 3, 70, "Text",ExpressionUUID->"fc4708a5-ccdd-4b3d-abb7-a736bc76493f"],
+Cell[12414, 288, 73, 0, 70, "Text",ExpressionUUID->"9079705e-60e9-405a-8c57-3cc091bcee72"],
+Cell[12490, 290, 1059, 17, 70, "Input",ExpressionUUID->"5f87c822-24f8-41e4-8d54-27ccab29faa7"],
+Cell[13552, 309, 254, 4, 70, "Text",ExpressionUUID->"8e76be49-6e95-421a-9690-43ed26e1e335"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
